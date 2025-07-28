@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datatypes In Js</title>
+</head>
+<body>
+    <h1>Comparision Operators In Js</h1>
+    <ul>
+        <li>Arthmetic Operators (+,-,*,/,%)</li>
+        <li>Assignment Operators (+=,=,-=,*=)</li>
+        <li>Increment/Decrement Operators (++,--)</li> 
+        <li>Comparision Operators (>,>=,<,<=,==,===,!=,!==)</li>
+        <li>Logical Operators (&&,||,!)</li>
+    </ul>
+<script>
+
+let price = 150;
+let price1 = 160;
+let amt = '160';
+
+// Comparision Operators return true or false 
+console.log(price > price1);  // false
+console.log(`price >= price1 : ${price >= price1}`);  
+console.log(price < price1); 
+console.log(price <= price1); 
+
+console.log(typeof(price1));
+console.log(typeof(amt));
+console.log("price1 == amt : " + (price1 == amt)); // == only check values
+console.log("price1 === amt : " + (price1 === amt)); // ==  check values and also check datatye
+
+console.log("price1 != amt : " + (price1 != amt));
+
+console.log("price1 !== amt : " + (price1 !== amt));
+</script>
+</body>
+</html>
