@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Switch Case In Js</title>
+</head>
+<body>
+    <h1>Switch Case In Js</h1>
+
+    <!-- 
+    alternative of if else ladder 
+    
+    compare to ladder switch case is easy to understand and compare to if else ladder switch case program fast
+    -->
+    
+<script>
+
+// let signalColor = prompt("Enter Signal Color :(RED/GREEN/YELLOW) ");
+// console.log(signalColor);
+
+// switch(signalColor)
+// {
+//     case "RED" :
+//     console.log("Stop");
+//     break;
+
+//     case "GREEN" :
+//     console.log("Go");
+//     break;
+
+//     case "YELLOW" :
+//     console.log("Wait");
+//     break;
+
+//     default :
+//     console.log("Error");
+// }
+
+
+let month = prompt("Enter Month In Number (1 to 12 ) ");
+let isLeapYear = false;
+console.log(typeof(month));
+month = parseInt(month);
+console.log(typeof(month));
+switch(month){
+    case 1 :
+    console.log("Month Of Jan Have 31 Days");
+    break;
+
+    case 2 :
+        isLeapYear = confirm("Is This Year Is Leap Year ? ");
+        switch(isLeapYear){ 
+            
+            case true :
+            console.log("Month Of Feb Have 29 Days");
+            break;
+
+            case false :
+            console.log("Month Of Feb Have 28 Days");
+            break;
+        }
+    break;
+
+    case 3 :
+    console.log("Month Of March Have 31 Days");
+    break;
+
+    case 4 :
+    console.log("Month Of April Have 30 Days");
+    break;
+
+    case 5 :
+    console.log("Month Of MAY Have 31 Days");
+    break;
+
+    case 6 :
+    console.log("Month Of Jun Have 30 Days");
+    break;
+
+    case 7 :
+    console.log("Month Of July Have 31 Days");
+    break;
+
+    case 8 :
+    console.log("Month Of Aug Have 31 Days");
+    break;
+
+    case 9 :
+    console.log("Month Of Sep Have 30 Days");
+    break;
+
+    case 10 :
+    console.log("Month Of Oct Have 31 Days");
+    break;
+
+    case 11 :
+    console.log("Month Of Nov Have 30 Days");
+    break;
+
+    case 12 :
+    console.log("Month Of Dec Have 31 Days");
+    break;
+
+    default :
+    console.log("Enter Valid Month.");
+}
+
+</script>
+</body>
+</html>

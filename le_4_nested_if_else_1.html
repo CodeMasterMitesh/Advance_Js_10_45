@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>If Else Condition In Js</title>
+</head>
+<body>
+    <h1>Nested If Condition In Js</h1>
+    
+<script>
+let age = prompt("Enter Your Age : ");
+let areYouIndian = false;
+let haveElectionCard = false;
+let idProof = false;
+
+if(age >= 18)
+{
+    areYouIndian = confirm("Are You Indian ? (Yes/No)");
+    console.log(areYouIndian);
+
+    if(areYouIndian){
+        haveElectionCard = confirm("You Have Election Card ? (Ok For Yes/ Cancel For No) ");
+
+        if(haveElectionCard){
+            console.log("You Can Vote.");
+        }else{
+            idProof = confirm("You Have Any Id Proof By Gov Approved ? (Ok For Yes/ Cancel For No) ");
+            
+            if(idProof){
+                console.log("You Can Vote.");
+            }else{
+                console.log("You Can't Vote.");
+            }
+        }
+        
+    }else{
+         console.log("You Can't Vote.");
+    }
+    
+}else{
+    console.log("You Can't Vote.");
+}
+</script>
+</body>
+</html>

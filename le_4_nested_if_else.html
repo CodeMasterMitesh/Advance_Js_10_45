@@ -10,18 +10,17 @@
     
 <script>
 
-// calc using js 
+// calc using js if else ladder and nested if else
 // num 
 // operator +,-,*,/,square(**)
 
 let num = 0;
 let num1 = 0;
 let operator = prompt("Enter Operator ;");
-
+// console.log(operator);
 
 if(operator == "**"){
     num = prompt("Enter Value 1 :");
-    console.log(num * num);
 }else{
     num = prompt("Enter Value 1 :");
     num1 = prompt("Enter Any Value 2 : ");
@@ -40,9 +39,15 @@ if(operator == "+"){
 }else if(operator == "*"){
     console.log(num * num1);
 }else if(operator == "/"){
-    console.log(num / num1);
+    // console.log(num1);
+    // console.log(num);
+    if(num1 === 0){
+        console.log("Cannot divide by zero");
+    }else{
+        console.log(num / num1);
+    }
 }else if(operator == "**"){
-   
+   console.log(num * num);
 }else{
     console.log("Enter Valid Operator");
 }
