@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loops In Js</title>
+</head>
+<body>
+    <h1>Loops In Js</h1>
+    <h2>6 Type Of Loops In Js</h2>
+    <ul>
+        <li>while Loop : In JavaScript, a while loop is a control flow statement that repeatedly executes a block of code as long as a specified condition evaluates to true</li>
+        <li>do while Loop</li>
+        <li>for loop</li>
+        <li>forin</li>
+        <li>forof</li>
+        <li>for Each</li>
+    </ul>
+
+<!-- 
+step 1) inializer 
+step 2) increment/decrement 
+step 3) condition
+ -->
+
+<!-- do while loop check condition in last and do while loop execute min 1 time if condition false and if condition is true than execute again and check condition   -->
+<script>
+// do while loop
+let n = 10;
+// reverse 10 t0 1
+// do{
+//     console.log(n);
+//     n--;
+// }while(n >= 1);
+
+// reverse even number
+// do{
+//     console.log(n);
+//     n-=2; // n = n -2
+// }while(n >= 1);
+
+// odd number
+n = 9
+// do{
+//     console.log(n);
+//     n-=2; // n = n -2 
+// }while(n >= 1);
+
+// sum of odd number
+let sum = 0;
+do{
+    sum+=n; //sum = sum + n;
+    n-=2;
+}while(n >= 1);
+ console.log(sum);
+
+// sum = 0 + 9; sum = 9
+// sum = 9 + 7; sum = 16
+// sum = 16 + 5; sum = 21
+// sum = 21 + 3; sum = 24
+// sum = 24 + 1; sum = 25
+
+</script>
+</body>
+</html>
