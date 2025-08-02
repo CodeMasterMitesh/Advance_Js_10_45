@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loops In Js</title>
+</head>
+<body>
+    <h1>Nested For Loop In Js</h1>
+   
+    <!--
+    1 2 3 4 5  
+    1 2 3 4 5  
+    1 2 3 4 5 
+    1 2 3 4 5
+    1 2 3 4 5 
+    -->
+
+    <!--
+    1 2 3 4 5  
+    6 7 8 9 10  
+    1 2 3 4 5 
+    1 2 3 4 5
+    1 2 3 4 5 
+    -->
+
+<script>
+let num = 1;
+let sum = 0;
+let total = 0;
+// let avg;
+for(let i = 1;i <= 5;i++){
+    sum = 0;
+    for(let j = 1;j <= 5;j++)
+    {
+        // console.log(j);
+        document.write(num + " ");
+        sum+=num;
+        // total+=num;
+        num++;
+    }
+    document.write("Total Price  : "+ sum + " ;  ");
+    document.write("Avg Price : " + sum / 5);
+    document.write("<br>");
+
+}
+document.write(total);
+document.write("<br>");
+
+// 1 2 3 4 5 = 15
+// 6 + 7 + 8 + 9 + 10
+</script>
+</body>
+</html>
