@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function With Parameters and Return Keyword In Js</title>
+</head>
+<body>
+    <h1>Function With Parameters and Return Keyword In Js</h1>
+    <!-- 
+
+    function is block of code and using function we can create reusable program and function save memory 
+    function invoke when we call function
+
+    -->
+<script>
+
+function cal(num,num1,num2,num3)  //  this is function parameters // parameters  always as variable
+{
+    // console.log(num + num1);
+    console.log("Function Proccessed");
+    return num + num1 + num2 + num3;
+}
+
+let result = cal(25,50,65,75);
+
+console.log(result); // arguments 
+
+let avg = result / 4;
+console.log("Avg of result " + avg);
+
+result = cal(15,7,13,19);
+console.log(result);
+
+avg = result / 4;
+console.log("Avg of result " + avg);
+
+// username and password generation using function
+
+// let name = prompt("Enter Your Name :");
+// let username;
+// let password;
+
+// function genarateUserNPass(n){
+
+//     username = "@" + n + "040825";
+//     password = n + "@#$" + n.length;  
+
+//     return "Your User Name is : " + username + " ." + " Your Password Is : " + password + "."; 
+// }
+
+// genarateUserNPass(name);
+
+// let genarateUserNPass = (n) => {
+
+//     username = "@" + n + "040825";
+//     password = n + "@#$" + n.length;  
+
+//     return "Your User Name is : " + username + " ." + " Your Password Is : " + password + "."; 
+// }
+// console.log(genarateUserNPass(name));
+
+// let name1 = prompt("Enter Your Name :");
+// console.log(genarateUserNPass(name1));
+
+// let arrow = (str)=>{ return "Good Morning " + str + ".";}
+// console.log(arrow("Shivam"));
+
+
+let arrow = (str)=> console.log("Good Morning " + str + ".");
+arrow("Mitesh");
+
+</script>
+</body>
+</html>
