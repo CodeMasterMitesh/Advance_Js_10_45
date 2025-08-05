@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array In Js</title>
+</head>
+<body>
+   <h1>Array is store multiple datas in single varaible</h1> 
+
+<script>
+// this is index array
+// index number start from 0
+        //0 1 2 3 4 5 6 7 8 9         
+let arr= [11,21,31,41,51,61,71,81,91,100];
+
+console.log(arr);
+// console.log(typeof(arr));
+// console.log(arr.length);
+// console.log(arr[0]);
+// console.log(arr[1]);
+// console.log(arr[2]);
+
+// for(let i = 0; i < arr.length; i++){
+//     console.log(arr[i]);
+// }
+
+// for of loop // 
+// The for...of loop in JavaScript provides a concise and readable way to iterate over the values of iterable objects. Introduced in ECMAScript 6 (ES6), it simplifies the process of accessing individual elements within data structures like arrays, strings, Maps, Sets, and NodeLists.
+
+// for (const ele of arr) {
+//     console.log(ele * ele);
+// }
+
+// for in loop
+// for (const key in arr) {
+//     console.log(key, "=>", arr[key]);
+// }
+
+
+let cityName = ["Ahmedabad","Baroda","Rajkot","Surat","Jamnagar"];
+
+// for(const e of cityName)
+// {
+//     document.write(e," , ");
+// }
+
+// In JavaScript, the forEach() method provides a way to iterate over elements in an array. It executes a provided callback function once for each element in the array, in ascending index order. 
+// Key characteristics of forEach():
+// Iteration:
+// It iterates over each element of an array.
+// Callback Function:
+// It takes a callback function as an argument, which is executed for each element. This callback function can optionally receive three arguments:
+// currentValue: The current element being processed in the array.
+// index: The index of the current element being processed.
+// array: The array forEach() was called upon.
+// No Return Value:
+// forEach() always returns undefined. It does not create a new array or modify the original array unless explicitly done within the callback function.
+// Purpose:
+// It is primarily used for performing an action or operation on each element of an array, such as logging elements, modifying them in place, or triggering side effects.
+
+// cityName.forEach((e,idx,arr)=>{
+//     console.log(e,idx,arr);
+// });
+
+
+let myfc = (e,idx,arr)=>{
+    // console.log(arr[0]);
+    for(let i = cityName.length - 1;i >= 0;i--)
+    {
+        console.log(arr[i]);
+    }
+};
+
+cityName.forEach(myfc);
+// console.log(myfc());
+</script>
+</body>
+</html>
