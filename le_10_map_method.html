@@ -6,8 +6,8 @@
     <title>Array In Js</title>
 </head>
 <body>
-   <h1>For Each Method</h1> 
-   <!-- The map() method in JavaScript is a higher-order function available on Array.prototype. It is used to create a new array by applying a provided callback function to each element of an existing array.  -->
+   <h1>Map Method</h1> 
+<!-- The map() method in JavaScript is a higher-order function available on Array.prototype. It is used to create a new array by applying a provided callback function to each element of an existing array.  -->
 <!-- Here's a breakdown of its key characteristics:
 Creates a New Array:
 map() does not modify the original array. Instead, it returns a completely new array containing the results of the callback function applied to each element.
@@ -25,7 +25,7 @@ As mentioned, map() is a non-mutating method, meaning it does not change the ori
 
 <script>
 
-let fruits = ["Banana","Apple","Mango","Orange","Dragon Fruit","Kiwi"];
+// let fruits = ["Banana","Apple","Mango","Orange","Dragon Fruit","Kiwi"];
 
 
 // let newArray = fruits.map((e)=>{
@@ -33,20 +33,26 @@ let fruits = ["Banana","Apple","Mango","Orange","Dragon Fruit","Kiwi"];
 //     return e + " " + e.length;
 // });
 
-let data = (e)=>{
-    // console.log(e);
-    console.log(e + " " + e.length);
-    return e + " " + e.length;
-}
-let newArray = fruits.map(data);
+// let data = (e)=>{
+//     // console.log(e);
+//     console.log(e + " " + e.length);
+//     return e + " " + e.length;
+// }
+// let newArray = fruits.map(data);
 
-console.log(newArray);
-console.log(fruits);
+// console.log(newArray);
+// console.log(fruits);
 
 
-// let arry = [1,3,5,7,9,11,13,15,17,19];
+let arry = [1,3,5,7,9,11,13,15,17,19];
 
-// [2,4,6,8,10,12,14,16,18,20];
+let newEvenNumber =  arry.map((e,idx,arr)=>{
+    // console.log(idx," : " ,e , " => ", arr);
+    return e + 1;
+});
+
+console.log(newEvenNumber);
+console.log(arry);
 
 </script>
 </body>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array In Js</title>
+</head>
+<body>
+<h1>Reduce Method Method</h1> 
+
+<!-- 
+// Reduce Method 
+// Parameter	Description
+// accumulator	Holds the running total/result
+// currentValue	Current item being processed in the array
+// initialValue	(Optional) The initial value of the accumulator
+// accumulator = 0 -> currentValue = 1 = accumulator = accumulator + currentValue; // 1
+// accumulator = 1 -> currentValue = 2 = accumulator = accumulator + currentValue; // 3
+// accumulator = 3 -> currentValue = 3 = accumulator = accumulator + currentValue; // 6
+// let arr = [1,2,3,4,5];
+
+// let sum = arr.reduce((accumulator,currentValue)=>{
+//     return accumulator + currentValue;
+// });
+// console.log(sum); 
+-->
+
+<script>
+
+let arr = [1,2,3,4,5];
+
+// let sum = arr.reduce((acc,curVal)=>{
+//     // console.log(acc,curVal);
+//     return acc+=curVal;
+// });
+
+// console.log(sum);
+
+
+let factorial = arr.reduce((acc,curVal)=>{
+    // console.log(acc,curVal);
+    return acc * curVal;
+});
+console.log(factorial);
+
+</script>
+</body>
+</html>
