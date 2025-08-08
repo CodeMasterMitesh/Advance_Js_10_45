@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object In Js</title>
+</head>
+<body>
+<h1>Object In Js</h1> 
+
+<script>
+// this is object
+
+let Students = [ 
+
+{name : "Kiran",surname : "Patel",dob : "01-01-1998",education : "BCA",lastPer : 98,haveyougmail : true},
+{name : "Manish",surname : "Prajapati",dob : "01-05-1995",education : "MCA",lastPer : 78,haveyougmail : true},
+{name : "Kushal",surname : "Pandya",dob : "01-06-1997",education : "B.tech",lastPer : 65,haveyougmail : true},
+{name : "Pavan",surname : "Chaturvedi",dob : "01-07-1999",education : "MBA",lastPer : 60,haveyougmail : true},
+{name : "Raj",surname : "Chaudhry",dob : "06-10-2000",education : "B.COM",lastPer : 55,haveyougmail : true},
+{name : "Suraj",surname : "Patel",dob : "06-10-2001",education : "BBA",lastPer : 99,haveyougmail : true},
+
+];
+let maxValue = Students[3].lastPer;
+let minValue = Students[4].lastPer;
+// console.log(maxValue);
+
+Students.map((obj)=>{
+    for (const key in obj) {
+        // console.log(key + " => " + obj[key]);
+        // console.log(obj["lastPer"]);
+        if(obj["lastPer"] > maxValue){
+            maxValue = obj["lastPer"];
+        }
+
+        if(obj["lastPer"] < minValue){
+            minValue = obj["lastPer"];
+        }
+    }
+});
+
+console.log(maxValue);
+console.log(minValue);
+
+
+</script>
+</body>
+</html>

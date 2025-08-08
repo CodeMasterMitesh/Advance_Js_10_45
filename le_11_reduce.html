@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object In Js</title>
+</head>
+<body>
+<h1>Reduce In Js</h1> 
+
+<script>
+
+let colors = ["White","Black","Blue","Yellow","Green","Orange"];
+
+let allColors = colors.reduce((acc,curr)=>{
+    return acc += `- ${curr}`;
+});
+console.log(allColors);
+console.log(typeof(allColors));
+
+</script>
+</body>
+</html>
