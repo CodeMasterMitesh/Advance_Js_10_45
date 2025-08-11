@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Methods In Js</title>
+</head>
+<body>
+<h1>Array Methods In Js</h1> 
+
+<script>
+
+let colors = ["White","Black","Blue","Yellow","Green","Orange"];
+let col = "Purple";
+
+let data =  colors.push("Purple","Tomato","Oranage");
+
+// console.log(data); // return last element position
+
+// console.log(colors);
+
+let re =  colors.pop();  // return remove element name
+// console.log(re);
+
+// console.log(colors);
+
+let st = colors.unshift("Royalblue"); // return last element position
+
+// console.log(st); 
+// console.log(colors);
+
+let stEl = colors.shift(); // return remove element name
+// console.log(stEl);
+// console.log(colors);
+
+
+let colors1 = ["Magenta","Turqouise","Silver","Golden"];
+
+
+let newColors = colors.concat(colors1);
+
+console.log(newColors);
+
+// let str = newColors.join(",");
+// console.log(str);
+
+let sl  = newColors.slice(0,4);
+console.log(sl);
+
+let spl = newColors.splice(5,0,"Red");
+console.log(spl);
+
+
+
+// let idx = newColors.indexOf("Silver",6);
+// console.log(idx);
+
+
+let lstIdx = newColors.lastIndexOf("Red",3);
+console.log("Last index Method : " + lstIdx);
+
+
+
+</script>
+</body>
+</html>
