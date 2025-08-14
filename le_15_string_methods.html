@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Methods In Js</title>
+</head>
+<body>
+<h1>Strting Methods In Js</h1> 
+<!-- 
+slice(startIndex, endIndex):
+Extracts characters from startIndex up to (but not including) endIndex.
+Supports negative indices, which count from the end of the string. For example, -1 refers to the last character, -2 to the second to last, and so on.
+If startIndex is greater than endIndex, slice() returns an empty string.
+substring(startIndex, endIndex):
+
+Extracts characters between startIndex and endIndex.
+Does not support negative indices; any negative index is treated as 0.
+If startIndex is greater than endIndex, substring() automatically swaps the arguments, effectively treating the smaller index as the start and the larger as the end. -->
+<script>
+let text = "Welcome";
+let str = "  Welcome To India India Students.  ";
+let pos = str.indexOf(text);
+console.log(pos);
+let endNmber = pos + text.length;
+console.log(endNmber);
+// console.log(str.slice(pos,endNmber));
+
+// console.log(str.substring(26,15));
+// console.log(str.substr(pos,endNmber));
+
+// console.log(str);
+// console.log(str.length);
+let t = str.trim();
+console.log(t);
+console.log(t.length);
+// console.log(str.trimStart());
+// console.log(str.trimEnd());
+// console.log(str.length);
+let newStr = str.replace("India","Canada");
+
+console.log(newStr);
+
+let newStri = str.replaceAll("India","Canada");
+console.log(newStri.replaceAll("a","e"));
+
+
+let originalString = "ABCD";
+let n = 1;
+// console.log(parseInt(n));
+let paddedString = originalString.padStart(5, n); // "005"
+// console.log(paddedString);
+// for(i = 1;i<=10;i++){
+//     console.log(originalString.padStart(5, i));
+// }
+// console.log(originalString.padStart(5, n+=1));
+// console.log(originalString.padStart(5, n+=1));
+// console.log(originalString.padStart(5, n+=1));
+
+
+let companyCode = "PATELWEBS"; // PATELWEBS0
+companyCode = companyCode.padEnd(10, '0'); // PATELWEBS0
+
+let serialNumbr; 
+for (let i = 1; i <= 10; i++) {   
+    // console.log(i.toString().padStart(3, '0'));
+    serialNumbr = companyCode + i; 
+    console.log(serialNumbr);
+}
+
+</script>
+</body>
+</html>
