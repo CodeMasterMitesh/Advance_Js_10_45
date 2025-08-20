@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Properties</title>
+    
+</head>
+<body>
+
+<h1 id="heading"><span><a href="#">DOM</a> </span> Properties</h1>
+<p><span>Text 1</span> </p>
+<p><span>Text 2</span> </p>
+<p><span>Text 3</span> </p>
+<p><span>Text 4</span> </p>
+<p><span>Text 5</span> </p>
+
+<!-- 
+innerHTML 
+innerText 
+TextContext
+ -->
+ <script>
+
+// let str = document.getElementById("heading");
+// console.log(str);
+// console.log(str.innerHTML); // get html
+// console.log(str.innerText); // get text
+
+let p = document.getElementsByTagName("p");
+// console.log(p[0].innerHTML);
+
+for (const e of p) {
+    // console.log(e.innerHTML); // get html of all p tag
+    console.log(e.innerText); // get text of all p tag
+}
+
+</script>   
+</body>
+</html>

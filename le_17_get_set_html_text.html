@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GET SET HTML AND TEXT</title>
+    <style>
+        h3{
+            visibility: hidden;
+        }
+        .p1{
+            height: 300px;
+            width: 300px;
+            border: 2px solid black;
+            background-color: lightcoral;
+        }
+        .p1 img{
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<h1 id="heading"><span><a title="DOCUMENT OBJECT MODULE" href="#">DOM</a> </span> Properties</h1>
+<p class="para"><span>Text 1</span> </p>
+<p class="para"><span>Text 2</span> </p>
+<p class="para"><span>Text 3</span> </p>
+<p class="para"><span>Text 4</span> </p>
+<p class="para"><span>Text 5</span> </p>
+
+<h3>Hello Students. How Are You?</h3>
+<!-- 
+innerHTML 
+innerText 
+TextContext
+ -->
+ <script>
+
+// let h = document.querySelector("#heading");
+// console.log(h.innerHTML); // get html of heading id
+// h.innerHTML = "<p>Welcome To Patel Web Solution</p>"; // set html of heading tag
+// console.log(h);
+// // get text
+// console.log(h.innerText);
+// // set text 
+// h.innerText = "Good Morning Students";
+// console.log(h);
+
+// let p = document.querySelectorAll(".para");
+// // console.log(p);
+
+// p.forEach((e)=>{
+//     console.log(e.innerHTML); // GET all p tag innerHtml
+//     e.innerHTML = "<a href='https://www.google.com'>Google</a>";
+//     console.log(e.innerHTML);
+
+// });
+
+let h3 = document.querySelector("h3");
+console.log(h3.textContent); // get text using textContent property
+h3.textContent = "Good Morning Students. How Are You?";
+console.log(h3);
+
+
+// getAttribute 
+
+let att = document.querySelector("a");
+console.log(att.getAttribute("title"));// get attribute
+console.log(att.getAttribute("href"));// get attribute
+
+console.log(att.setAttribute("title","DOM")); // set attribute
+console.log(att.setAttribute("href","https://google.com")); // set attribute
+
+console.log(att.getAttribute("title"));// get attribute
+console.log(att.getAttribute("href"));// get attribute
+
+
+
+// setAttribute 
+
+
+let p1 = document.querySelectorAll(".para");
+console.log(p1);
+
+p1.forEach((e)=>{
+    e.setAttribute("class","p1");
+    e.innerHTML = "<img alt='js-logo'>";
+    console.log(e.childNodes[0].setAttribute("src","js.png"));
+});
+// console.log(p1);
+</script>   
+</body>
+</html>

@@ -4,10 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DOM Methods</title>
+    
 </head>
 <body>
-    
+
 <h1 id="heading">DOM METHODS</h1>
+<p class="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, repellat.</p>
+<p class="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, repellat.</p>
+<p class="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, repellat.</p>
+<p class="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, repellat.</p>
+<p class="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, repellat.</p>
+<p class="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, repellat.</p>
+<p class="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, repellat.</p>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, repellat.</p>
+<div class="container">
+    <p class="para">Welcome Students For Advance Js.</p>
+    <p class="para">Welcome Students For Advance Js.</p>
+    <p class="para">Welcome Students For Advance Js.</p>
+</div>
 <!-- 
 1) getElementByID
 2) getElementsByClassName
@@ -17,9 +31,36 @@
 -->
  <script>
 
-let heading = document.getElementById("heading");
-console.log(heading);
+// let heading = document.getElementById("heading");
+// console.log(heading);
 
- </script>   
+// let para = document.getElementsByClassName("para"); //  return html collection
+// let arr = [1,2,4];
+// console.log(para);
+// for (let i = 0; i < para.length; i++) {
+//     console.log(para[i]);
+// }
+
+// for (const e of para) {
+//     console.log(e)
+// }
+
+// for (const key in para) {
+//    console.log(para[key]);
+// }
+
+// let tag = document.getElementsByTagName("p"); // return html collection
+// console.log(tag);
+
+// let data = document.querySelector("#heading"); // return first node element
+// let data = document.querySelector(".para");
+// let data = document.querySelector(".container .para");
+// console.log(data);
+let coll = document.querySelectorAll("p"); // return first nodeList of element and you can access throgh forEach method
+// coll.forEach((e)=>{
+//     console.log(e);
+// });
+console.log(coll);
+</script>   
 </body>
 </html>
