@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GET SET HTML AND TEXT</title>
+    <style>
+        h3{
+            visibility: hidden;
+        }
+        .p1{
+            height: 300px;
+            width: 300px;
+            border: 2px solid black;
+            background-color: lightcoral;
+        }
+        .p1 img{
+            width: 100%;
+        }
+        .data{
+            border: 2px solid black;
+            height: 200px;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+
+<h1 id="heading"><span><a title="DOCUMENT OBJECT MODULE" href="#">DOM</a> </span> Properties</h1>
+<p class="para">
+
+    <span>Text 1</span> 
+
+</p>
+
+<p class="para"><span>Text 2</span> </p>
+<p class="para"><span>Text 3</span> </p>
+<p class="para"><span>Text 4</span> </p>
+<p class="para"><span>Text 5</span> </p>
+
+<h3>Hello Students. How Are You?</h3>
+
+<div class="data">
+
+    <span>some text</span>
+
+</div>
+
+<!-- 
+createElement : create new elemet using this method
+append : append means inside tag but before end of tag
+prepend : prepend means inside tag but start of tag
+before :before means before tag/element (outside)
+after : after means after tag/element (outside) 
+-->
+<script>
+
+// create element using js
+let div = document.createElement("div");
+console.log(div);
+div.innerHTML = "<a href='https://google.com'>Google</a>";
+console.log(div);
+
+let data = document.querySelector(".data");
+console.log(data);
+
+// data.append(div);
+// data.prepend(div);
+
+let heading = document.querySelector("#heading");
+// heading.after(div);
+heading.before(div);
+</script>
+</body>
+</html>
