@@ -32,28 +32,44 @@
 </head>
 <body>
     <h1>Javascript Events</h1>
-    <button onclick="document.querySelector('h1').innerText = 'Hello JavaScript.';console.log('clicked');document.querySelector('body').style.backgroundColor = 'blue';">Click Me</button>
+    <button onclick="Myfunc();">Click Me</button>
     
-    <button ondblclick="console.log('Double Click')">DBL Click</button>
+    <button ondblclick="myDbClick();">DBL Click</button>
 
-    <div onmouseleave="this.style.backgroundColor = 'green'"; onmouseenter="let a = this;this.style.backgroundColor = 'orange';console.log(a);" class="container">
+    <div class="container">
         Some Text
     </div>
-    <div onmouseenter="this.style.backgroundColor = 'orange';console.log('mouse enter in div container');" class="container">
+    <div class="container">
         Some Text
     </div>
-<!-- 
-In JavaScript, events are actions or occurrences that happen in the browser, 
-often as a result of user interactions or other processes. 
-They are a fundamental concept for creating dynamic and interactive web pages.  
-Mouse Events: click, dblclick, mouseover, mouseout, mousedown, mouseup, mousemove.
-Keyboard Events: keydown, keyup, keypress.
-Form Events: submit, change, focus, blur.
--->
+
 <!-- 1 Inline -->
 <!-- 2 Internal/External using function -->
 <!-- 2 External/internal using arrow function -->
 <!-- 3 External/internal using eventListener -->
+<script>
 
+function Myfunc()
+{
+    let div = document.querySelectorAll(".container");
+    // console.log(div);
+    div.forEach((e)=>{
+        console.dir(e);
+        e.style.backgroundColor = 'green';
+        e.style.color = 'black';
+    });
+}
+
+function myDbClick()
+{
+    let div = document.querySelectorAll(".container");
+    // console.log(div);
+    div.forEach((e)=>{
+        console.dir(e);
+        e.style.cssText = 'background-color : orange;color:white;font-size:25px;';
+    });
+}
+
+</script>
 </body>
 </html>
