@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyboard Events In Javascript</title>
+    <style>
+        h3{
+            visibility: hidden;
+        }
+        .p1{
+            height: 300px;
+            width: 300px;
+            border: 2px solid black;
+            background-color: lightcoral;
+        }
+        .p1 img{
+            width: 100%;
+        }
+        .data{
+            border: 2px solid black;
+            height: 200px;
+            width: 200px;
+        }
+        .container{
+            height: 300px;
+            width: 300px;
+            border: 2px solid black;
+
+        }
+    </style>
+</head>
+<body>
+    <h1>Keyboard Events In Javascript</h1>
+    <button><a href="dashboard.html">Go To Dashboard(CLICK TAB Short Key)</a></button>
+<!-- Keyboard Events: keydown, keyup, keypress. -->
+ <label for="">Key Down</label>
+ <input type="text" class="name" name="name" value="">
+
+ <div class="text"></div>
+ <button class="btn" onclick="console.log('clicked');">Click Me</button>
+<script>
+
+let input = document.querySelector(".name");
+let text = document.querySelector(".text");
+console.dir(input);
+
+// input.onkeydown = (e)=>{
+//     console.log(e);
+//     console.log(e.key);
+//     console.log(e.code); // this is unique
+//     console.log(e.keyCode);
+
+//     if(e.keyCode == 113){
+//         location.href = 'https://codemastermitesh.com';
+//     }
+
+// }
+
+// input.onkeyup = (e)=>{
+
+//     text.innerHTML = input.value;
+//     console.log(input.value);
+//     console.log(e);
+//     console.log(e.code);
+//     console.log(e.keyCode);
+
+// }
+
+input.onkeypress = (evt)=>{
+
+    text.innerHTML = input.value;
+    console.log(input.value);
+    console.log(evt);
+    console.log(evt.code);
+    console.log(evt.keyCode);
+
+}
+
+
+// let body = document.querySelector("body");
+//  body.onkeydown = (e)=>{
+//     if(e.keyCode == 9){
+//         location.href = 'dashboard.html';
+//     }
+// }
+
+let btn = document.querySelector(".btn");
+btn.onclick = (e)=>{
+    console.log(e);
+}
+</script>
+</body>
+</html>
