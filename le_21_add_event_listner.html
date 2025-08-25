@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EventListener In Javascript</title>
+</head>
+<body>
+    <!-- In JavaScript, addEventListener() is a method that allows you to attach an event handler function to a specified element in the Document Object Model (DOM). This method enables you to listen for specific events (such as a 'click', 'keydown', 'mouseover', etc.) on that element and execute a designated function when the event occurs.  -->
+    <h1>Keyboard Events In Javascript</h1>
+    <button>Click Me</button>
+    <button class="bgchange">Dark Mode</button>
+
+<script>
+    let btn = document.querySelector("button");
+    let body = document.querySelector("body");
+    console.log(btn);
+
+    // btn.addEventListener("click",(e)=>{
+    //     console.log(e);
+    //     console.log("clicked");
+    // });
+
+    // let bgchange = (e)=>{
+       
+    //     console.log(e);
+    //     console.log(e.clientX);
+    //     console.log(e.clientY);
+    //     console.log(e.pointerType);
+    //     console.log(e.target);
+    //     console.log(e.type);
+    //     console.log("Background Color Changed");
+    // };
+
+    // body.addEventListener("mousemove",bgchange);  // bg change is function
+
+    let bgchange = document.querySelector(".bgchange");
+    let mode = true;
+    bgchange.addEventListener("click",(e)=>{
+        if(mode)
+        {
+            console.log("bg Black");
+            body.style.backgroundColor = "black";
+            body.style.color = "white";
+            bgchange.innerText = "Light Mode";
+            mode = false;
+        }else{
+            console.log("bg white");
+            body.style.backgroundColor = "white";
+            body.style.color = "black";
+            bgchange.innerText = "Dark Mode";
+            mode = true;
+        }
+        
+    });
+
+</script>
+</body>
+</html>
