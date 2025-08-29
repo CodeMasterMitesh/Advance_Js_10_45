@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Events In Javascript</title>
+</head>
+<body>
+    <!-- In JavaScript, addEventListener() is a method that allows you to attach an event handler function to a specified element in the Document Object Model (DOM). This method enables you to listen for specific events (such as a 'click', 'keydown', 'mouseover', etc.) on that element and execute a designated function when the event occurs.  -->
+    <h1>Form Events In Javascript</h1>
+    <!-- 
+        onchange 
+        onblur 
+        onfocus
+        submit
+    -->
+
+    <form action="">
+        <label for="">Fist Name</label>
+        <input type="text" class="name" value="" name="name">
+        <br>
+        <label for="">Last Name</label>
+        <input type="text" class="lastname" name="last_name">
+        <br>
+        <label for="">Select Your City</label>
+        <select name="city" id="city">
+            <option value="Select Your City">None</option>
+            <option value="Ahmedabad">Ahmedabad</option>
+            <option value="Delhi">Delhi</option>
+            <option value="Agra">Agra</option>
+            <option value="Indore">Indore</option>
+            <option value="Jaipur">Jaipur</option>
+        </select>
+        <br>
+        <label for="">Select Your state</label>
+        <select name="state" id="state">
+            <option value="Select Your Sate">None</option>
+            <option value="Gujarat">Gujarat</option>
+            <option value="Delhi">Delhi</option>
+            <option value="U.P">U.P</option>
+            <option value="M.P">M.P</option>
+            <option value="Rajasthan">Rajasthan</option>
+        </select>
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+    <div id="details"></div>
+    <div style="color: red;" id="errors"></div>
+
+<script>
+let name = document.querySelector(".name");
+let lastname = document.querySelector(".lastname");
+let errors = document.querySelector("#errors");
+//    console.log(name.value);
+console.log(name);
+name.addEventListener("blur",(e)=>{
+    if(name.value == ''){
+        name.focus();
+        errors.innerText = "Kindly Fill Your Name";
+    }else{
+        name.style.backgroundColor = "blue";
+        errors.innerText = "";   
+    }
+    console.log("This is Blur Effetc");
+});
+
+lastname.addEventListener("blur",(e)=>{
+    if(lastname.value == ''){
+        lastname.focus();
+        errors.innerText = "Kindly Fill Your last Name";
+    }else{
+        errors.innerText = ""; 
+        lastname.style.backgroundColor = "Orange"; 
+    }
+    console.log("This is Blur Effetc");
+});
+
+name.addEventListener("focus",(e)=>{
+    console.log("This is Focus Effetc");
+});
+
+
+let city = document.querySelector("#city");
+let state = document.querySelector("#state");
+// console.log(city.value);
+city.addEventListener("change",(e)=>{
+    let details = document.querySelector("#details");
+
+    if(city.value == "Ahmedabad"){
+        console.log(city.value);
+        console.log(state.value = "Gujarat");
+    }else if(city.value == "Delhi"){
+        console.log(city.value);
+        console.log(state.value = "Delhi");
+    }else if(city.value == "Agra"){
+        console.log(city.value);
+        console.log(state.value = "U.P");
+    }else if(city.value == "Indore"){
+        console.log(city.value);
+        console.log(state.value = "M.P");
+    }else if(city.value == "Jaipur"){
+        console.log(city.value);
+        console.log(state.value = "Rajasthan");
+    }
+
+    details.innerText = `Your Name is ${name.value} and Your Last Name is ${lastname.value}.
+    Your City Name is ${city.value} and Your State is ${state.value}.`;
+});
+</script>
+</body>
+</html>
