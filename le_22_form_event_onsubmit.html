@@ -240,6 +240,7 @@
     const form = document.getElementById('studentForm');
     const fullName = document.getElementById('fullName');
     const email = document.getElementById('email');
+    const phone = document.getElementById('phone');
     const password = document.getElementById('password');
     const confirmPassword = document.getElementById('confirmPassword');
     const invalid = document.querySelectorAll('.invalid-feedback');
@@ -274,8 +275,12 @@
                 e.style.display = "none";
                 // invalid.innerHTML = '';
             });
-
-            form.submit();
+            localStorage.setItem("email",email.value);
+            localStorage.setItem("password",password.value);
+            localStorage.setItem("name",fullName.value);
+            localStorage.setItem("phone",phone.value);
+            window.location.href = 'le_23_login.html';
+            // form.submit();
         }
 
 
@@ -283,9 +288,6 @@
     });
 
 // this is our code end
-
-
-
 
     const requiredFields = ['fullName','email','password','confirmPassword','dob','grade','phone','terms'];
 
