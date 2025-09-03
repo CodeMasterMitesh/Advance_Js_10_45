@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classlist Method In Js</title>
+    <style>
+        .box{
+            width: 250px;
+            height: 250px;
+            border: 2px solid black;
+            background-color: lightblue;
+        }
+        .bg{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <h1>The classList property in JavaScript, accessible on HTML elements, is indeed an object. More specifically, it is an instance of the DOMTokenList object.</h1>
+    
+    <div>
+        Some Text
+    </div>
+    <button>Add Class</button>
+    <button id="rmbtn">Remove Class</button>
+    <button id="togbtn">Toggle Class</button>
+    <button id="bgchange">Bg Change</button>
+
+<script>
+
+let btn = document.querySelector("button");
+let removeRtn = document.querySelector("#rmbtn");
+
+btn.addEventListener("click",(e)=>{
+    console.log(e);
+    // console.log("click");
+    let div = document.querySelector("div").classList.add("box");
+    console.dir(div);
+});
+
+removeRtn.addEventListener("click",(e)=>{
+    console.log(e);
+    let div = document.querySelector("div").classList.remove("box");
+    console.dir(div);
+});
+
+togbtn.addEventListener("click",(e)=>{
+    console.log(e);
+    let div = document.querySelector("div").classList.toggle("box");
+    console.dir(div);
+});
+
+bgchange.addEventListener("click",(e)=>{
+    console.log(e);
+    let body = document.querySelector("body").classList.toggle("bg");
+    console.dir(body);
+});
+</script>
+</body>
+</html>
