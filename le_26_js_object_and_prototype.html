@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Object and Prototype IN Js</title>
+</head>
+<body>
+    <h1>Javascript Object and Prototype IN Js</h1>
+
+<script>
+// object method 
+const students = {
+    name : "Ashish",
+    age: 22,
+    education : "B.Com",
+
+    // showDetails : function(){
+    //     console.log(`My Name is ${this.name} and My age is ${this.age} and my education is ${this.education}.`)
+    // }
+
+    showDetails(name,age,education){
+        this.name = name;
+        this.age = age;
+        this.education = education;
+        console.log(`My Name is ${this.name} and My age is ${this.age} and my education is ${this.education}.`);
+    }
+}
+
+console.log(students);
+console.log(typeof(students));
+students.showDetails("Rohan",22,"BCA");
+
+
+
+const karanArjun = {
+     showDetails(name,age,education){
+        this.name = name;
+        this.age = age;
+        this.education = education;
+        console.log(`My Name is ${this.name} and My age is ${this.age} and my education is ${this.education}.`);
+    }
+}
+
+const gabbar = {
+    
+}
+
+karanArjun.__proto__ = students;
+gabbar.__proto__ = students;
+
+
+console.log(karanArjun.showDetails("Chirag",25,"BBA"));
+// console.log(gabbar.showDetails("Gabbar",55,"5th Pass"));
+gabbar.showDetails("Gabbar",55,"5th Pass");
+// let array = [1,2,3];
+// console.log(array);
+
+</script>
+</body>
+</html>
