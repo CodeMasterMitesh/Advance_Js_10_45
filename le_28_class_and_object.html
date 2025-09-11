@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Class and Object IN Js</title>
+</head>
+<body>
+    <h1>Javascript Class and Object IN Js</h1>
+<!-- In JavaScript, a class serves as a blueprint or template for creating objects, encapsulating data (properties) and behavior (methods) into a single, reusable unit. 
+Classes were introduced in ECMAScript 2015 (ES6) as syntactic sugar over JavaScript's existing prototype-based inheritance.
+A class definition is created using the class keyword, followed by the class name. It conventionally begins with a capital letter. Inside the class, you define: 
+Constructor:
+A special method named constructor() that is automatically called when a new object (instance) of the class is created. It is used to initialize the object's properties. The this keyword within the constructor refers to the newly created instance.
+Instance Methods:
+Functions defined within the class that provide behavior for objects created from that class. They can access and modify instance properties using this.
+Static Methods and Properties (Optional):
+Methods and properties defined with the static keyword belong to the class itself, not to individual instances. They are called directly on the class name. -->
+
+
+<script>
+
+class Car{
+    
+    constructor(name,brand,mfyear,price){
+        this.name = name;
+        this.brand = brand;
+        this.mfYear = mfyear;
+        this.price = price;
+        console.log("This is Car Class Constructor");
+    }
+
+    start()
+    {
+        console.log("Car Start");
+    }
+
+    stop(){
+        console.log("Car Stopped");
+    }
+
+    // carDetails(name,brand,mfyear,price){
+    //     this.name = name;
+    //     this.brand = brand;
+    //     this.mfYear = mfyear;
+    //     this.price = price;
+    //     console.log(`Car name is ${this.name} and brand is ${this.brand} and mfYear is ${this.mfYear} and car price is ${this.price}`);
+    // }
+
+    carDetails(){
+        console.log(`Car name is ${this.name} and brand is ${this.brand} and mfYear is ${this.mfYear} and car price is ${this.price}`);
+    }
+
+}
+
+let i30 = new Car("Fortuner","Toyota",2025,1500000);
+// console.log(i30);
+
+i30.start();
+// i30.carDetails("Fortuner","Toyota",2025,2500000);
+i30.carDetails();
+// console.log(i30);
+</script>
+</body>
+</html>
