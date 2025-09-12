@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Inheritance</title>
+</head>
+<body>
+<h1>Javascript Inheritance</h1>
+<!-- Inheritance in JavaScript is a mechanism where an object or class can acquire the properties and methods of another object or class. This allows for code reuse and the creation of hierarchical relationships between objects. -->
+<script>
+
+class Car{  // this is parent class
+    constructor(name,brand,mfyear,price){
+        this.name = name;
+        this.brand = brand;
+        this.mfYear = mfyear;
+        this.price = price;
+        console.log("This is Car Class Constructor");
+    }
+
+    start()
+    {
+        console.log("Car Start");
+    }
+
+    stop(){
+        console.log("Car Stopped");
+    }
+
+    // carDetails(name,brand,mfyear,price){
+    //     this.name = name;
+    //     this.brand = brand;
+    //     this.mfYear = mfyear;
+    //     this.price = price;
+    //     console.log(`Car name is ${this.name} and brand is ${this.brand} and mfYear is ${this.mfYear} and car price is ${this.price}`);
+    // }
+
+    carDetails(){
+        console.log(`Car name is ${this.name} and brand is ${this.brand} and mfYear is ${this.mfYear} and car price is ${this.price}`);
+    }
+
+}
+
+// this is child class
+class Hyundai extends Car{ // this is child class
+
+    constructor(name,brand,mfyear,price){
+        console.log("This is Hyundai Class Constructor Before Call Of Parent Constructor");
+        super(name,brand,mfyear,price);
+        console.log("This is Hyundai Class Constructor");
+    }
+    
+    start()
+    {
+        console.log("Hyundai Car Start");
+    }
+    specification()
+    {
+        console.log("Car Is Autometed Gear");
+        console.log("Power Window");
+        console.log("Fecility of Sunroof");
+    }
+
+}
+
+class MarutiSuzuki extends Car{ // this is child class
+
+    constructor(name,brand,mfyear,price){
+        console.log("This is MarutiSuzuki Class Constructor Before Call Of Parent Constructor");
+        super(name,brand,mfyear,price);
+        console.log("This is MarutiSuzuki Class Constructor");
+    }
+    specification()
+    {
+        console.log("Car Is Autometed Gear");
+        console.log("Power Window");
+    }
+
+}
+
+let i20 = new Hyundai("Hyundai I20","Hyundai India",2025,600000);
+console.log(i20);
+i20.carDetails();
+i20.start();
+i20.stop();
+i20.specification();
+
+let wagnor = new MarutiSuzuki("New Wagonor","Maruti Suzuki India",2025,300000);
+console.log(wagnor);
+wagnor.carDetails();
+
+// let i30 = new Car("Fortuner","Toyota",2025,1500000);
+// console.log(i30);
+
+// i30.start();
+// // i30.carDetails("Fortuner","Toyota",2025,2500000);
+// i30.carDetails();
+// console.log(i30);
+</script>
+</body>
+</html>
