@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript synchronous and asynchronous</title>
+</head>
+<body>
+<h1>Javascript synchronous and asynchronous</h1>
+
+<!-- In JavaScript, the terms "synchronous" and "asynchronous" describe how code execution flows, 
+particularly when dealing with tasks that might take a significant amount of time to complete.
+Synchronous in JavaScript:
+
+Synchronous execution in JavaScript means that code runs sequentially, 
+one line after another. Each operation must complete before the next one can begin. 
+This is also referred to as "blocking" behavior because if a task takes a long time, 
+it will block the execution of all subsequent code until it finishes
+
+Asynchronous in JavaScript:
+Asynchronous execution in JavaScript allows certain tasks to be initiated without blocking the main 
+thread of execution. While an asynchronous operation is in progress 
+(e.g., fetching data from a server, reading a file), other parts of the code can continue to execute. 
+Once the asynchronous operation completes, a predefined callback function or a Promise's .then()  -->
+<!-- method is typically used to handle the result. -->
+<script>
+
+// console.log("Hello");
+
+// setTimeout(()=>{
+//     console.log("hello 1");
+// },3000);
+
+// console.log("Hello 2");
+
+// callback
+
+// function calc(n,n1){
+//     console.log(n + n1);
+// }
+
+
+// function sum(a,b,sumCallBack){
+//     sumCallBack(a,b);
+// }
+
+// sum(5,6,calc);
+    
+    
+// let calc = (n,n1)=>{
+//     console.log(n + n1);
+// }
+
+
+// function sum(a,b,callbackFunction){
+//     callbackFunction(a,b);
+// }
+
+// sum(15,25,calc);
+
+
+// callback hell
+// A callback function in JavaScript is a function that is passed as an argument to another function, 
+// and is intended to be executed at a later time, typically after the "parent" or "higher-order" 
+// function has completed some operation
+
+// callback helll -> promise and promise chain -> async and await 
+function getData(id,nextData)
+{
+    setTimeout(()=>{
+        console.log(id);
+        if(nextData)
+        {
+         nextData();
+        }
+    },2000);
+}
+
+console.log("Waiting For Data 1.....");
+getData(10,()=>{
+    console.log("Waiting For Data 2.....");
+    getData(12,()=>{
+        console.log("Waiting For Data 3.....");
+        getData(13,()=>{
+            console.log("Waiting For Data 4.....");
+            getData(15);
+        });
+    });
+});
+
+</script>
+</body>
+</html>
