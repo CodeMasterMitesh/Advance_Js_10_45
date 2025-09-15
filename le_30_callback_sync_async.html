@@ -64,29 +64,31 @@ Once the asynchronous operation completes, a predefined callback function or a P
 // and is intended to be executed at a later time, typically after the "parent" or "higher-order" 
 // function has completed some operation
 
-// callback helll -> promise and promise chain -> async and await 
-function getData(id,nextData)
-{
-    setTimeout(()=>{
-        console.log(id);
-        if(nextData)
-        {
-         nextData();
-        }
-    },2000);
-}
+// callback hell -> promise and promise chain -> async and await 
+// function getData(id,nextData)
+// {
+//     setTimeout(()=>{
+//         console.log(id);
+//         if(nextData)
+//         {
+//          nextData();
+//         }
+//     },2000);
+// };
 
-console.log("Waiting For Data 1.....");
-getData(10,()=>{
-    console.log("Waiting For Data 2.....");
-    getData(12,()=>{
-        console.log("Waiting For Data 3.....");
-        getData(13,()=>{
-            console.log("Waiting For Data 4.....");
-            getData(15);
-        });
-    });
-});
+// console.log("Waiting For Data 1.....");
+// getData(10,()=>{
+//     console.log("Waiting For Data 2.....");
+//     getData(12,()=>{
+//         console.log("Waiting For Data 3.....");
+//         getData(13,()=>{
+//             console.log("Waiting For Data 4.....");
+//             getData(15);
+//         });
+//     });
+// });
+
+
 
 </script>
 </body>

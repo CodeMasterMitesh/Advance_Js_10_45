@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Promise</title>
+</head>
+<body>
+<h1>Javascript Promise</h1>
+
+<script>
+
+// callback hell -> promise and promise chain -> async and await 
+function getData(id)
+{
+    return new Promise((res,rej)=>{
+        setTimeout(()=>{
+            console.log(id);
+            res("Success");
+        },2000);
+    });
+};
+
+console.log("Waiting For Data .....");
+getData(1).then((res)=>{
+    console.log("Waiting For Data 1 .....");
+    return getData(2);
+}).then((res)=>{
+    console.log("Waiting For Data 2 .....");
+    return getData(3);
+}).then((res)=>{
+    console.log(res);
+});
+
+// console.log("Waiting For Data 1.....");
+// getData(10,()=>{
+//     console.log("Waiting For Data 2.....");
+//     getData(12,()=>{
+//         console.log("Waiting For Data 3.....");
+//         getData(13,()=>{
+//             console.log("Waiting For Data 4.....");
+//             getData(15);
+//         });
+//     });
+// });
+
+// promise 
+// let promise = new Promise((res,rej)=>{
+//     console.log("Promise Given");
+//     res("Promise Resolved");
+//     // rej("Some Error");
+// });
+// console.log(promise);
+
+// promise example 
+
+// function getData(data){
+//     return new Promise((res,rej)=>{
+//         setTimeout(()=>{
+//             // console.log(data);
+//             // res("Successlly Data Received",data);
+//             rej("Network Error");
+//         },3000);
+//     });
+// };
+
+// let promise = getData(1);
+// // console.log(promise);
+
+// promise.then((result)=>{
+//     console.log(result);
+// });
+
+// promise.catch((err)=>{
+//     console.log(err);
+// }); 
+
+// promise example 
+// function getAsyncValue(data){
+//     return new Promise((res,rej)=>{
+//         setTimeout(()=>{
+//             console.log(data);
+//             res("Successlly Data Received");
+//             // rej("Network Error");
+//         },3000);
+//     });
+// };
+
+// function getAsyncValue1(data){
+//     return new Promise((res,rej)=>{
+//         setTimeout(()=>{
+//             console.log(data);
+//             res("Successlly Data 1 Received");
+//             // rej("Network Error");
+//         },3000);
+//     });
+// };
+
+// let promise = getAsyncValue(10);
+// console.log("Waiting For Data 1....");
+// promise.then((res)=>{
+//     console.log(res);
+//     let promise1 = getAsyncValue1(20);
+//     promise1.then((res)=>{
+//         console.log(res);
+//     });
+// });
+
+// console.log("Waiting For Data 1....");
+// getAsyncValue(10).then((res)=>{
+//     console.log(res);
+//     console.log("Waiting For Data 2....");
+//     getAsyncValue1(20).then((res)=>{
+//         console.log(res);
+//     });
+// });
+
+</script>
+</body>
+</html>
