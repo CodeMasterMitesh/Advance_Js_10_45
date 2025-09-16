@@ -17,20 +17,22 @@ function getData(id)
         setTimeout(()=>{
             console.log(id);
             res("Success");
-        },2000);
+        },3000);
     });
 };
 
+// let promise = getData(1);
 console.log("Waiting For Data .....");
 getData(1).then((res)=>{
     console.log("Waiting For Data 1 .....");
     return getData(2);
 }).then((res)=>{
     console.log("Waiting For Data 2 .....");
-    return getData(3);
+   return getData(3);
 }).then((res)=>{
     console.log(res);
 });
+
 
 // console.log("Waiting For Data 1.....");
 // getData(10,()=>{

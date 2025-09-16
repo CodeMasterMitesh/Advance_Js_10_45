@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Async and Await</title>
+</head>
+<body>
+<h1>Javascript Async and Await</h1>
+
+<script>
+
+// callback hell -> promise and promise chain -> async and await 
+function getData(id){
+    return new Promise((res,rej)=>{
+        setTimeout(()=>{
+            console.log(id);
+            res("Success");
+        },3000);
+    });
+};
+
+// IIFE -> Immediately Invoked Function Expression
+// async await 
+
+(async function()
+{
+    console.log("Waiting For Data 1.....");
+    let res = await getData(1);
+    console.log(res);
+    console.log("Waiting For Data 2.....");
+    let res1 = await getData(2);
+    console.log(res1);
+    console.log("Waiting For Data 3.....");
+    let res2 = await getData(3);
+    console.log(res2);
+})();
+// let promise = getAllData();
+// this is Promise chain
+
+// let promise = getData(1);
+// console.log("Waiting For Data .....");
+// getData(1).then((res)=>{
+//     console.log("Waiting For Data 1 .....");
+//     return getData(2);
+// }).then((res)=>{
+//     console.log("Waiting For Data 2 .....");
+//    return getData(3);
+// }).then((res)=>{
+//     console.log(res);
+// });
+
+// this is callback method
+// console.log("Waiting For Data 1.....");
+// getData(10,()=>{
+//     console.log("Waiting For Data 2.....");
+//     getData(12,()=>{
+//         console.log("Waiting For Data 3.....");
+//         getData(13,()=>{
+//             console.log("Waiting For Data 4.....");
+//             getData(15);
+//         });
+//     });
+// });
+
+// function getNotification(t){
+//     return new Promise((res,rej)=>{
+//         setTimeout(()=>{
+//             console.log("Hello Student. Today Lecture Time " + t);
+//             res("Success");
+//         },3000);
+//     });
+// };
+
+// let promise = getNotification("10 AM");
+
+// async function getMgs(){
+//    console.log("Msg 1 On way....");
+//    await getNotification("10 AM");
+//    console.log("Msg 2 On way....");
+//    await getNotification("12 AM");
+//    console.log("Msg 3 On way....");
+//    await getNotification("6 PM");
+// }
+// getMgs();
+// async function notification(){
+//     console.log("Good Morning");
+// }
+
+// notification();
+</script>
+</body>
+</html>
