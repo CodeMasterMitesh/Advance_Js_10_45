@@ -109,12 +109,20 @@ function saveCart() {
   localStorage.setItem('hungerBarCart', JSON.stringify(cart));
 }
 
+// Helper function to escape HTML
+function escapeHtml(text) {
+  const div = document.createElement('div');
+  div.textContent = text;
+  return div.innerHTML;
+}
+
 // Create menu item card
 function createMenuItem(item) {
+  const escapedName = escapeHtml(item.name);
   return `
     <div class="col-md-6 col-lg-3 mb-4">
       <div class="menu-card">
-        <img src="${item.image}" alt="${item.name}" class="menu-item-img" onerror="this.src='https://via.placeholder.com/400x200?text=${item.name}'">
+        <img src="${item.image}" alt="${escapedName}" class="menu-item-img" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22200%22%3E%3Crect fill=%22%23ddd%22 width=%22400%22 height=%22200%22/%3E%3Ctext fill=%22%23999%22 x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22%3E${escapedName}%3C/text%3E%3C/svg%3E'">
         <div class="p-3">
           <h5 class="fw-bold">${item.name}</h5>
           <p class="text-muted small">${item.description}</p>
@@ -242,24 +250,23 @@ function clearCart() {
 // Checkout
 function checkout() {
   if (cart.length === 0) {
-    alert('Your cart is empty!');
+    showNotification('Your cart is empty! Please add items before checkout.');
     return;
   }
 
   const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
   const itemCount = cart.reduce((sum, item) => sum + item.quantity, 0);
   
-  const orderSummary = `
-Order Summary:
-${cart.map(item => `${item.quantity}x ${item.name} - $${(item.price * item.quantity).toFixed(2)}`).join('\n')}
-
-Total Items: ${itemCount}
-Total Amount: $${totalPrice.toFixed(2)}
-
-Thank you for your order!
-  `;
-
-  alert(orderSummary);
+  // Create a custom confirmation
+  const confirmCheckout = confirm(
+    `Complete your order?\n\n` +
+    `Total Items: ${itemCount}\n` +
+    `Total Amount: $${totalPrice.toFixed(2)}`
+  );
+  
+  if (!confirmCheckout) {
+    return;
+  }
   
   // Clear cart after checkout
   cart = [];
@@ -272,7 +279,7 @@ Thank you for your order!
     cartModal.hide();
   }
   
-  showNotification('Order placed successfully! 🎉');
+  showNotification('Order placed successfully! 🎉 Thank you for your order!');
 }
 
 // Show notification
