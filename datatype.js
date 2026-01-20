@@ -23,9 +23,9 @@ let Students = {
 }
 
 console.log(typeof(Students));
-console.log(Students.name);
+// console.log(Students.name);
 
 // this is array
 let arr = [1,2,3,4,5,6];
 
-console.log(typeof(arr));
+console.log(arr,typeof(arr));
